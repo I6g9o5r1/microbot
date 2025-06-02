@@ -12,8 +12,10 @@ def on_uart_data_received():
         l()
     elif data == "b":
         b()
+    elif data == "AC-1":
+        sound()
 bluetooth.on_uart_data_received(serial.delimiters(Delimiters.HASH), on_uart_data_received)
-#функции моторов
+#функции робота
 def f():
     robotbit.motor_run(robotbit.Motors.M1A, 200)
     robotbit.motor_run(robotbit.Motors.M2A, 200)
@@ -39,5 +41,15 @@ def b():
     robotbit.motor_run(robotbit.Motors.M2A, -200)
     robotbit.motor_run(robotbit.Motors.M1B, -200)
     robotbit.motor_run(robotbit.Motors.M2B, -200)
+def sound():
+    music.play(music.create_sound_expression(WaveShape.NOISE,
+                    4980,
+                    4980,
+                    255,
+                    0,
+                    603,
+                    SoundExpressionEffect.NONE,
+                    InterpolationCurve.LINEAR),
+                music.PlaybackMode.UNTIL_DONE)
 data = ""
 bluetooth.start_uart_service()
