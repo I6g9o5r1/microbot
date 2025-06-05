@@ -27,21 +27,17 @@ def f():
     robotbit.motor_run(robotbit.Motors.M2A, 200)
     robotbit.motor_run(robotbit.Motors.M1B, 200)
     robotbit.motor_run(robotbit.Motors.M2B, 200)
-    s()
 def r():
     robotbit.motor_run(robotbit.Motors.M1A, -200)
     robotbit.motor_run(robotbit.Motors.M2A, 200)
     robotbit.motor_run(robotbit.Motors.M1B, -200)
     robotbit.motor_run(robotbit.Motors.M2B, 200)
-    s()
 def l():
     robotbit.motor_run(robotbit.Motors.M1A, 200)
     robotbit.motor_run(robotbit.Motors.M2A, -200)
     robotbit.motor_run(robotbit.Motors.M1B, 200)
     robotbit.motor_run(robotbit.Motors.M2B, -200)
-    s()
 def s():
-    basic.pause(100)
     robotbit.motor_run(robotbit.Motors.M1A, 0)
     robotbit.motor_run(robotbit.Motors.M2A, 0)
     robotbit.motor_run(robotbit.Motors.M1B, 0)
@@ -51,7 +47,6 @@ def b():
     robotbit.motor_run(robotbit.Motors.M2A, -200)
     robotbit.motor_run(robotbit.Motors.M1B, -200)
     robotbit.motor_run(robotbit.Motors.M2B, -200)
-    s()
 def sound():
     music.play(music.create_sound_expression(WaveShape.NOISE,
                     4980,
